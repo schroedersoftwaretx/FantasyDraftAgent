@@ -1,0 +1,38 @@
+[project]
+name = "fantasy-draft-assistant"
+version = "0.1.0"
+description = "Phase 1 fantasy football draft assistant data pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "nfl-data-py>=0.3",
+  "pandas>=2.0",
+  "numpy>=1.26",
+  "sqlalchemy>=2.0",
+  "alembic>=1.13",
+  "psycopg2-binary>=2.9",
+  "requests>=2.31",
+  "beautifulsoup4>=4.12",
+  "ruptures>=1.1",
+  "scikit-learn>=1.4",
+  "python-dotenv>=1.0",
+  "pydantic>=2.0",
+  "pydantic-settings>=2.0",
+  "pytest>=8.0",
+  "httpx>=0.27",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
